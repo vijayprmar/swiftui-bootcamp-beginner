@@ -9,7 +9,19 @@ import SwiftUI
 
 struct SafeAreaInsentBootcamp: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            List(0..<10){_ in
+                Rectangle()
+                    .frame(height: 300)
+            }
+            .navigationTitle("Safe area inset")
+           
+            .safeAreaInset(edge: .bottom) {
+                Text("Hi")
+                    .frame(maxWidth: .infinity)
+                    .background(.yellow)
+            }
+        }
     }
 }
 
